@@ -1,14 +1,11 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
 use App\Models\category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    //
     public function index(){
         $categories = category::all();
         return view ('admin.category.index', ['categories'=> $categories]);
@@ -18,7 +15,6 @@ class CategoryController extends Controller
     }
     public function store(Request $request){
         // dd($request->all());
-
         $validated = $request->validate([
             'name' => 'required|max:255',
         ]);
@@ -26,11 +22,11 @@ class CategoryController extends Controller
         $category = new category();
         $category->name = $request->name;
         $category->save();
-
         //redirect to route
         return redirect()->route('admin.category.index');
 
     }
+
     public function edit($id){
         // dd('edit category', $id);
         $category = category::findOrFail($id);
@@ -43,7 +39,6 @@ class CategoryController extends Controller
         ]);
         $category = category::findOrFail($id);
         $category->name = $request->name;
-
         $category->save();
         return redirect()->route('admin.category.index');
     }
@@ -51,7 +46,6 @@ class CategoryController extends Controller
         // dd('destroy', $id);
         $category = category::findOrFail($id);
         $category->delete();
-
         return redirect()->route('admin.category.index');
     }
 }

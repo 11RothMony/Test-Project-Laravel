@@ -12,7 +12,6 @@ class TagController extends Controller
         $tags = tag::all();
         return view('admin.tag.index',['tags'=>$tags]);
     }
-
     public function create(){
         return view('admin.tag.create');
     }
