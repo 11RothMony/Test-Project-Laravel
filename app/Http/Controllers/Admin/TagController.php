@@ -37,7 +37,6 @@ class TagController extends Controller
         $tag = tag::findOrFail($id);
         $tag->name = $request->name;
         $tag->save();
-
         return redirect()->route('admin.tag.index');
     }
     public function destroy(Request $request, $id){

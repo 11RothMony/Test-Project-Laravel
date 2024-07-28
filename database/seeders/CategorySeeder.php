@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        //define default data of category
         $data = [
             [
                 'name' =>'Frontend'

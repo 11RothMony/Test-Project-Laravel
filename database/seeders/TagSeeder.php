@@ -14,7 +14,7 @@ class TagSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        //define default data of tags
         $data = [
             [
                 'name' => 'HTML'

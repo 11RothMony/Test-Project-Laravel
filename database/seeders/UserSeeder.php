@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        //define default data of password
         User::create([ 
             'name'=>'Admin',
             'email'=>'rothmony@gmail.com',
